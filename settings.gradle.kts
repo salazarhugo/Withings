@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -15,4 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Withings"
 include(":app")
- 
+include(":feature:search")
+include(":data:picture")
