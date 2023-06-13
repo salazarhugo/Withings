@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/picture" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/details" />
             <option value="$PROJECT_DIR$/feature/search" />
           </set>
         </option>

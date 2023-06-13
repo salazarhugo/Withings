@@ -6,4 +6,5 @@ data class Picture(
     val likes: Int,
     val comments: Int,
     val user: String,
+    val userAvatar: String?,
 )

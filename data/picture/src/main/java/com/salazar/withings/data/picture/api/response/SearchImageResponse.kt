@@ -18,4 +18,7 @@ data class HitsResponse(
     val likes: Int,
     val comments: Int,
     val user: String,
+    val userImageURL: String?,
+    val largeImageURL: String?,
+    val fullHDURL: String?,
 )

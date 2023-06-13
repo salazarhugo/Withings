@@ -41,6 +41,8 @@ android {
 
 dependencies {
     implementation(project(":feature:search"))
+    implementation(project(":feature:details"))
+    implementation(project(":data:picture"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -58,6 +60,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // Accompanist System UI Controller
+    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.accompanist.placeholder.material)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

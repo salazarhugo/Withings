@@ -5,16 +5,18 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
+import com.salazar.withings.data.picture.SearchViewModel
 
 const val searchNavigationRoute = "search_route"
 private const val DEEP_LINK_URI_PATTERN =
-    "https://searcharty.app/search"
+    "https://withings.com/search"
 
 fun NavController.navigateToSearch(navOptions: NavOptions? = null) {
     this.navigate(searchNavigationRoute, navOptions)
 }
 
 fun NavGraphBuilder.searchScreen(
+    viewModel: SearchViewModel,
     navigateToPictureDetails: (String) -> Unit,
 ) {
     composable(
@@ -24,6 +26,7 @@ fun NavGraphBuilder.searchScreen(
         ),
     ) {
         SearchRoute(
+            viewModel = viewModel,
             navigateToPictureDetails = navigateToPictureDetails,
         )
     }

@@ -18,3 +18,4 @@ rootProject.name = "Withings"
 include(":app")
 include(":feature:search")
 include(":data:picture")
+include(":feature:details")

@@ -6,9 +6,10 @@ import com.salazar.withings.data.picture.api.response.HitsResponse
 fun HitsResponse.toPicture(): Picture {
     return Picture(
         id = id,
-        imageUrl = previewURL,
+        imageUrl = fullHDURL ?: largeImageURL ?: imageURL ?: previewURL,
         user = user,
         comments = comments,
         likes = likes,
+        userAvatar = userImageURL,
     )
 }

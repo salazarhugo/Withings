@@ -1,4 +1,4 @@
-package com.salazar.withings.feature.search
+package com.salazar.withings.feature.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,20 +15,21 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-data class SearchUiState(
+data class DetailsUiState(
     val name: String = "",
     val isLoading: Boolean = false,
     val errorMessage: String = "",
     val searchInput: String = "",
     val pictures: List<Picture>? = null,
+    val selectedPictures: Set<Picture> = emptySet(),
 )
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(
+class DetailsViewModel @Inject constructor(
     private val pictureRepository: PictureRepository,
 ) : ViewModel() {
 
-    private val viewModelState = MutableStateFlow(SearchUiState(isLoading = true))
+    private val viewModelState = MutableStateFlow(DetailsUiState(isLoading = true))
     private var searchJob: Job? = null
 
     val uiState = viewModelState
@@ -41,7 +42,7 @@ class SearchViewModel @Inject constructor(
     init {
     }
 
-    fun onSearchInputChanged(searchInput: String) {
+    fun onDetailsInputChanged(searchInput: String) {
         viewModelState.update {
             it.copy(searchInput = searchInput, isLoading = true)
         }
